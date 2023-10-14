@@ -9,9 +9,12 @@ import { fetch as undiciFetch } from 'undici';
 dotenv.config();
 const connectionString = `${process.env.DATABASE_URL}`;
 
-// init prisma client
-const connection = connect({ url: connectionString, fetch: undiciFetch });
-const adapter = new PrismaPlanetScale(connection);
+let prisma: PrismaClient = new PrismaClient(); 
+if (process.env.NODE_ENV === 'production') {
+    const connection = connect({ url: connectionString, fetch: undiciFetch });
+	const adapter = new PrismaPlanetScale(connection);
+    prisma = new PrismaClient({ adapter });
+} 
 
 // Use Prisma Client as normal
-export const prisma = new PrismaClient({ adapter });
+export default prisma;
