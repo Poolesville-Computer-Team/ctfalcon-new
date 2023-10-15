@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 async function main() {
-	const bob = await prisma.user.upsert({
+	const daniel = await prisma.user.upsert({
 		where: { email: 'webdev@phscomputerteam.com' },
 		update: {},
 		create: {
@@ -57,7 +57,7 @@ async function main() {
 			flag: 'Hello World'
 		}
 	});
-	console.log({ bob, team, challenge });
+	console.log({ daniel, team, challenge });
 }
 main()
 	.then(async () => {
