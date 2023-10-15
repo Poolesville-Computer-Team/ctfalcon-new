@@ -21,11 +21,17 @@ A CTF for Poolesville High School
 We welcome all contributions to CTFalcon! We believe this project is a great way to get started with development workflows and web development. Please see [CONTRIBUTING.md](CONTRIBUTING.md) for more information on contributing.
 
 # Workflows
+
 ## Staging
+
 This project uses [Neon Branches](https://neon.tech/docs/introduction/branching) and Github Actions to deploy previews for every pull request. This offers a production-like testing environment and should be used to test for bugs.
+
 ## Production
+
 This project uses Github Actions to deploy to production. This will be done automatically when a pull request is merged into `main`.
+
 ## Linting
+
 This project uses [ESLint](https://eslint.org/) and [Prettier](https://prettier.io) to lint and format files. This will be run automatically on every push, but will block pull requests. Please run it locally with `npm run lint`.
 
 # Getting Started
