@@ -7,9 +7,9 @@ generator client {
 }
 
 datasource db {
-    provider     = "mysql"
-    url          = env("DATABASE_URL")
-    relationMode = "prisma"
+    provider  = "postgresql"
+    url       = env("DATABASE_URL")
+    directUrl = env("DIRECT_URL")
 }
 
 model User {
@@ -21,7 +21,6 @@ model User {
     createdAt DateTime  @default(now())
     token     Token?
     profile   Profile?
-    profileId String    @unique
 }
 
 model Token {
@@ -47,8 +46,6 @@ model Profile {
     country    String?   @db.Char(2)
     gender     Gender?
     postalCode String?
-
-    @@index([teamId])
 }
 
 model Team {

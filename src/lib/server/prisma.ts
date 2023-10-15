@@ -1,18 +1,20 @@
 // Import needed packages
-import { connect } from '@planetscale/database';
-import { PrismaPlanetScale } from '@prisma/adapter-planetscale';
+import { Pool, neonConfig } from '@neondatabase/serverless';
+import { PrismaNeon } from '@prisma/adapter-neon';
 import { PrismaClient } from '@prisma/client';
 import dotenv from 'dotenv';
-import { fetch as undiciFetch } from 'undici';
+import ws from 'ws';
 
-// setup
+// Setup
 dotenv.config();
+neonConfig.webSocketConstructor = ws;
 const connectionString = `${process.env.DATABASE_URL}`;
 
+// Init prisma client
 let prisma: PrismaClient = new PrismaClient();
-if (process.env.NODE_ENV === 'production') {
-	const connection = connect({ url: connectionString, fetch: undiciFetch });
-	const adapter = new PrismaPlanetScale(connection);
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
+	const pool = new Pool({ connectionString });
+	const adapter = new PrismaNeon(pool);
 	prisma = new PrismaClient({ adapter });
 }
 
