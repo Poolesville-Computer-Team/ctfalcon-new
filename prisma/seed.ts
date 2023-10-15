@@ -6,7 +6,7 @@ async function main() {
 		update: {},
 		create: {
 			email: 'webdev@phscomputerteam.com',
-			username: 'bob',
+			username: 'daniel',
 			password: 'password',
 			token: {
 				connectOrCreate: {
