@@ -1,12 +1,12 @@
 <script lang="ts">
 	import Hamburger from './Hamburger.svelte';
-
 	let active: boolean = false;
+	import { page } from '$app/stores';
 </script>
 
 <nav class={`${active ? 'h-screen' : 'h-16'} w-screen`}>
 	<div
-		class={`mx-auto flex h-full w-11/12 max-w-4xl items-start justify-between text-lg font-poppins md:items-center`}
+		class={`mx-auto flex h-full w-11/12 max-w-4xl items-start justify-between font-poppins text-lg md:items-center`}
 	>
 		<div class="flex h-16 items-center"><a href="/">CTFalcon</a></div>
 		<ul
@@ -14,9 +14,11 @@
 				active ? 'h-screen' : 'h-0'
 			}`}
 		>
-			<li><a href="/">Home</a></li>
-			<li><a href="/rules">Challenges</a></li>
-			<li><a href="/events">About</a></li>
+			<li><a href="/" class:font-bold={$page.url.pathname == '/'}>Home</a></li>
+			<li>
+				<a href="/challenges" class:font-bold={$page.url.pathname == '/challenges'}>Challenges</a>
+			</li>
+			<li><a href="/about" class:font-bold={$page.url.pathname == '/about'}>About</a></li>
 			<li class="md:hidden"><a href="/login">Login</a></li>
 		</ul>
 		<div class="flex h-16 flex-col items-center justify-center">
