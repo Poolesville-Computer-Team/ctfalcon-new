@@ -6,10 +6,10 @@ export default {
 			colors: {
 				'dark-blue': '#060E13'
 			},
-            fontFamily: {
-                'sans': ['Inter', 'sans-serif'],
-                'poppins': ['Poppins', 'sans-serif']
-            }
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+				poppins: ['Poppins', 'sans-serif']
+			}
 		}
 	},
 	plugins: []
