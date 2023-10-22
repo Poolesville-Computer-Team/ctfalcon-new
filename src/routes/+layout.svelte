@@ -4,7 +4,9 @@
 </script>
 
 <Navbar />
-<slot />
+<main>
+	<slot />
+</main>
 
 <style lang="postcss">
 	:global(html) {

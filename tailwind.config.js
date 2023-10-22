@@ -9,6 +9,10 @@ export default {
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
 				poppins: ['Poppins', 'sans-serif']
+			},
+			backgroundImage: {
+				'orange-gradient':
+					'linear-gradient(93deg, #EFAE04 47.21%, #FA8700 128.3%, rgb(255, 185, 2) 157.86%);'
 			}
 		}
 	},
