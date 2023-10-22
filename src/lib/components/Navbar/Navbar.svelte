@@ -19,7 +19,7 @@
 				<a href="/challenges" class:font-bold={$page.url.pathname == '/challenges'}>Challenges</a>
 			</li>
 			<li><a href="/about" class:font-bold={$page.url.pathname == '/about'}>About</a></li>
-			<li class="md:hidden"><a href="/login">Login</a></li>
+			<li class="md:hidden"><a href="/start">Login</a></li>
 		</ul>
 		<div class="flex h-16 flex-col items-center justify-center">
 			<a href="/login" class="hidden md:block">Login</a>
