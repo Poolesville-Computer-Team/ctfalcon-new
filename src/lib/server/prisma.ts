@@ -12,7 +12,7 @@ const connectionString = `${process.env.DATABASE_URL}`;
 
 // Init prisma client
 let prisma: PrismaClient = new PrismaClient();
-if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
+if (process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview') {
 	const pool = new Pool({ connectionString });
 	const adapter = new PrismaNeon(pool);
 	prisma = new PrismaClient({ adapter });
