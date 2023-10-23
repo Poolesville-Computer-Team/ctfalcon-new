@@ -38,7 +38,6 @@ jobs:
           touch .env
           echo DATABASE_URL="${{ secrets.DATABASE_URL}}" >> .env
           echo DIRECT_URL="${{ secrets.DIRECT_DATABASE_URL}}" >> .env
-          echo NODE_ENV=production >> .env
           npx prisma migrate deploy
 
       - name: Install Vercel CLI
