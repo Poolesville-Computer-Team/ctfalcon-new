@@ -5,7 +5,7 @@
 	<title>Home | CTFalcon</title>
 </svelte:head>
 
-<section class="min-h-screen w-screen">
+<section class="w-screen">
 	<div class="mx-auto w-11/12 max-w-4xl pt-24">
 		<div class="space-y-8">
 			<h1 class="w-full max-w-2xl text-5xl font-black sm:text-8xl">CTFalcon</h1>
