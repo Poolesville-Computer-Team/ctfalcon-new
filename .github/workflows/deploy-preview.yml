@@ -52,4 +52,4 @@ jobs:
         with:
           message: |
             Neon branch :elephant: https://console.neon.tech/app/projects/${{ secrets.NEON_PROJECT_ID }}/branches/${{ steps.create_branch.outputs.branch_id }}
-        # Vercel Preview URL :rocket: : ${{ steps.deploy.outputs.preview_url }}
+            Vercel Preview URL :rocket: : ${{ steps.deploy.outputs.preview_url }}
