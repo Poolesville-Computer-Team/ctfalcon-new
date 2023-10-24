@@ -19,14 +19,13 @@ jobs:
           echo $pull_request_sha
 
       - name: Neon Database Create Branch Action
-        uses: neondatabase/create-branch-action@v3
+        uses: neondatabase/create-branch-action@v4
         id: create_branch
         with:
           project_id: ${{ secrets.NEON_PROJECT_ID }}
           branch_name: ${{steps.get_pull_request_sha.outputs.pull_request_sha}}
           api_key: ${{ secrets.NEON_API_KEY }}
           username: ${{ secrets.PG_USERNAME }}
-          password: ${{ secrets.PG_PASSWORD }}
 
       - name: Run Prisma Migrate
         run: |
