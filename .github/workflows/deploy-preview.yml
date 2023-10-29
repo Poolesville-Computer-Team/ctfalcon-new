@@ -32,9 +32,9 @@ jobs:
         run: |
           touch .env
 
-          echo DATABASE_URL=$(neonctl cs ${{ steps.branch-name.outputs.current_branch }} --project-id ${{ secrets.NEON_PROJECT_ID }} --role-name ${{ secrets.PG_USERNAME }} --database-name ${{ secrets.NEON_DATABSE }} --api-key ${{ secrets.NEON_API_KEY }}) >> .env
+          echo DATABASE_URL=$(neonctl cs ${{ steps.branch-name.outputs.current_branch }} --project-id ${{ secrets.NEON_PROJECT_ID }} --role-name ${{ secrets.PG_USERNAME }} --database-name ${{ secrets.NEON_DATABSE }} --api-key ${{ secrets.NEON_API_KEY }} --prisma --pooled) >> .env
 
-          echo DIRECT_URL=$(neonctl cs ${{ steps.branch-name.outputs.current_branch }} --project-id ${{ secrets.NEON_PROJECT_ID }} --role-name ${{ secrets.PG_USERNAME }} --database-name ${{ secrets.NEON_DATABSE }} --api-key ${{ secrets.NEON_API_KEY }}) >> .env
+          echo DIRECT_URL=$(neonctl cs ${{ steps.branch-name.outputs.current_branch }} --project-id ${{ secrets.NEON_PROJECT_ID }} --role-name ${{ secrets.PG_USERNAME }} --database-name ${{ secrets.NEON_DATABSE }} --api-key ${{ secrets.NEON_API_KEY }} --prisma) >> .env
 
           npx prisma generate
           npx prisma migrate deploy
@@ -50,7 +50,7 @@ jobs:
 
       - name: Deploy Preview to Vercel
         id: deploy
-        run: echo preview_url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}) >> $GITHUB_OUTPUT
+        run: echo preview_url=$(vercel deploy --prebuilt --env DATABASE_URL=$(neonctl cs ${{ steps.branch-name.outputs.current_branch }} --project-id ${{ secrets.NEON_PROJECT_ID }} --role-name ${{ secrets.PG_USERNAME }} --database-name ${{ secrets.NEON_DATABSE }} --api-key ${{ secrets.NEON_API_KEY }} --prisma --pooled) --env DIRECT_URL=$(neonctl cs ${{ steps.branch-name.outputs.current_branch }} --project-id ${{ secrets.NEON_PROJECT_ID }} --role-name ${{ secrets.PG_USERNAME }} --database-name ${{ secrets.NEON_DATABSE }} --api-key ${{ secrets.NEON_API_KEY }} --prisma) --token=${{ secrets.VERCEL_TOKEN }}) >> $GITHUB_OUTPUT
 
       - name: Comment on Pull Request
         uses: thollander/actions-comment-pull-request@v2
