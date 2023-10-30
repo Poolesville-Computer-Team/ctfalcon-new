@@ -19,7 +19,7 @@ model User {
     password  String?
     loginType LoginType @default(email)
     createdAt DateTime  @default(now())
-    token     Token?
+    token     Token[]
     profile   Profile?
 }
 
