@@ -22,7 +22,7 @@
 			<li class="md:hidden"><a href="/start">Login</a></li>
 		</ul>
 		<div class="flex h-16 flex-col items-center justify-center">
-			<a href="/login" class="hidden md:block">Login</a>
+			<a href="/start" class="hidden md:block">Login</a>
 			<div class="md:hidden"><Hamburger bind:active /></div>
 		</div>
 	</div>
