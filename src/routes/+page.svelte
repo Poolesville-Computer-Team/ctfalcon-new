@@ -32,8 +32,8 @@
 <section class="w-screen">
 	<div class="mx-auto w-11/12 max-w-4xl pt-24">
 		<h1 class="text-center text-4xl font-bold">Topics</h1>
-		<div class="mt-4 flex flex-wrap gap-8">
-			<Card class="w-64">
+		<div class="mt-4 grid grid-cols-1 gap-8 md:grid-cols-6">
+			<Card class="md:col-span-2">
 				<h2 class="text-3xl">Crytography</h2>
 				<p class="text-md text-center font-mono leading-loose">
 					A cryptography challenge involves tasks that test participants' knowledge of cryptography.
@@ -41,6 +41,74 @@
 					systems.
 				</p>
 			</Card>
+			<Card class="md:col-span-2">
+				<h2 class="text-3xl">Crytography</h2>
+				<p class="text-md text-center font-mono leading-loose">
+					A cryptography challenge involves tasks that test participants' knowledge of cryptography.
+					This can include decoding messages, breaking ciphertext, or finding flaws in cryptographic
+					systems.
+				</p>
+			</Card>
+			<Card class="md:col-span-2">
+				<h2 class="text-3xl">Crytography</h2>
+				<p class="text-md text-center font-mono leading-loose">
+					A cryptography challenge involves tasks that test participants' knowledge of cryptography.
+					This can include decoding messages, breaking ciphertext, or finding flaws in cryptographic
+					systems.
+				</p>
+			</Card>
+			<Card class="md:col-span-2 md:col-start-2">
+				<h2 class="text-3xl">Crytography</h2>
+				<p class="text-md text-center font-mono leading-loose">
+					A cryptography challenge involves tasks that test participants' knowledge of cryptography.
+					This can include decoding messages, breaking ciphertext, or finding flaws in cryptographic
+					systems.
+				</p>
+			</Card>
+			<Card class="md:col-span-2">
+				<h2 class="text-3xl">Crytography</h2>
+				<p class="text-md text-center font-mono leading-loose">
+					A cryptography challenge involves tasks that test participants' knowledge of cryptography.
+					This can include decoding messages, breaking ciphertext, or finding flaws in cryptographic
+					systems.
+				</p>
+			</Card>
+		</div>
+	</div>
+</section>
+<section class="w-screen">
+	<div class="mx-auto w-11/12 max-w-4xl pt-24">
+		<h1 class="text-center text-4xl font-bold">Sponsored By</h1>
+	</div>
+</section>
+<section class="w-screen">
+	<div class="mx-auto w-11/12 max-w-4xl pt-24">
+		<h1 class="text-center text-4xl font-bold">Additional Information</h1>
+		<div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
+			<div class="flex flex-col items-center gap-2">
+				<icon class="text-4xl">🚀</icon>
+				<h2 class="text-xl">What is CTFalcon?</h2>
+				<p class="font-mono text-sm leading-loose">
+					Laboris eiusmod labore et sint velit est dolore voluptate esse. Quis sint in in fugiat
+					culpa consectetur tempor. Mollit occaecat reprehenderit fugiat id.
+				</p>
+			</div>
+			<div class="flex flex-col items-center gap-2">
+				<icon class="text-4xl">🚀</icon>
+				<h2 class="text-xl">What is CTFalcon?</h2>
+				<p class="font-mono text-sm leading-loose">
+					Laboris eiusmod labore et sint velit est dolore voluptate esse. Quis sint in in fugiat
+					culpa consectetur tempor. Mollit occaecat reprehenderit fugiat id.
+				</p>
+			</div>
+			<div class="flex flex-col items-center gap-2">
+				<icon class="text-4xl">🚀</icon>
+				<h2 class="text-xl">What is CTFalcon?</h2>
+				<p class="font-mono text-sm leading-loose">
+					Laboris eiusmod labore et sint velit est dolore voluptate esse. Quis sint in in fugiat
+					culpa consectetur tempor. Mollit occaecat reprehenderit fugiat id.
+				</p>
+			</div>
 		</div>
 	</div>
 </section>
