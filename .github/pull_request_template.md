@@ -7,9 +7,9 @@ Closes # (issue)
 ## Best reviewed by:
 
 ## Screenshots
+
 (if applicable)
 
 ## Checklist:
 
 - [ ] I have tested my code changes.
-
