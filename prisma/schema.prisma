@@ -43,10 +43,10 @@ model Profile {
     school     String?
     team       Team?     @relation(fields: [teamId], references: [id])
     teamId     String?
-    ageGroup   AgeGroup?
-    country    String?   @db.Char(2)
-    gender     Gender?
-    postalCode String?
+    ageGroup   AgeGroup
+    country    String   @db.Char(2)
+    gender     Gender
+    postalCode String
 }
 
 model Team {
