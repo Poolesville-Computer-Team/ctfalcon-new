@@ -23,7 +23,12 @@ async function main() {
 				connectOrCreate: {
 					where: { id: '1' },
 					create: {
-						id: '1'
+						id: '1',
+						ageGroup: 'over18',
+						postalCode: '12345',
+						school: 'Poolesville High School',
+						gender: 'male',
+						country: 'US'
 					}
 				}
 			}

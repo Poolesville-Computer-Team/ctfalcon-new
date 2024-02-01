@@ -19,10 +19,14 @@
 				<a href="/challenges" class:font-bold={$page.url.pathname == '/challenges'}>Challenges</a>
 			</li>
 			<li><a href="/about" class:font-bold={$page.url.pathname == '/about'}>About</a></li>
-			<li class="md:hidden"><a href="/start">Login</a></li>
+			<li class="space-x-2 md:hidden">
+				<a href="/signin">Sign In</a>
+				<a class="rounded border p-1" href="/signup">Sign Up</a>
+			</li>
 		</ul>
-		<div class="flex h-16 flex-col items-center justify-center">
-			<a href="/start" class="hidden md:block">Login</a>
+		<div class="flex h-16 items-center justify-center gap-2">
+			<a href="/signin" class="hidden md:block">Sign In</a>
+			<a href="/signup" class="hidden rounded border p-1 md:block">Sign Up</a>
 			<div class="md:hidden"><Hamburger bind:active /></div>
 		</div>
 	</div>
