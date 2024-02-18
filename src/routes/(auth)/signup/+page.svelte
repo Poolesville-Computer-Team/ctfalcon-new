@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import Field from '$lib/components/Field.svelte';
 	import type { ActionData } from './$types';
 	import toast, { Toaster } from 'svelte-french-toast';
+    import { enhance } from '$app/forms';
 	export let form: ActionData;
-	if (Math.floor($page.status / 100) != 2) toast.error('Error');
 </script>
 
 <Toaster />
@@ -15,11 +14,14 @@
 			src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
 			alt="Your Company"
 		/>
-		<h2 class="mt-10 text-center text-2xl font-medium">Sign in to your account</h2>
+		<h2 class="mt-10 text-center text-2xl font-medium">Sign Up</h2>
 	</div>
 
 	<div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-		<form method="POST">
+		<form method="POST" use:enhance>
+            {#if form?.message}
+                {toast.error(form?.message)}
+            {/if}
 			<Field
 				label="Email Address"
 				name="email"
@@ -38,7 +40,7 @@
 			/>
 			<hr />
 			<Field label="Name" name="name" type="text" placeholder="John Doe" required />
-
+            <Field label="Username" name="username" type="text" placeholder="johndoe" required />
 			<div class="form-control w-full">
 				<label for="ageGroup" class="label">
 					<span class="label-text">Age Group</span>

@@ -7,62 +7,43 @@ async function main() {
 		create: {
 			email: 'webdev@phscomputerteam.com',
 			username: 'daniel',
-			password: 'password',
-			token: {
-				connectOrCreate: {
-					where: {
-						accessToken: '1'
-					},
-					create: {
-						accessToken: '1',
-						refreshToken: '1'
-					}
-				}
-			},
 			profile: {
-				connectOrCreate: {
-					where: { id: '1' },
-					create: {
-						id: '1',
-						ageGroup: 'over18',
-						postalCode: '12345',
-						school: 'Poolesville High School',
-						gender: 'male',
-						country: 'US'
+				create: {
+					ageGroup: 'over18',
+					postalCode: '12345',
+					school: 'Poolesville High School',
+					gender: 'male',
+					country: 'US',
+					team: {
+						create: {
+							name: 'PHS Computer Team',
+							challenges: {
+								create: {
+									title: 'Hello World',
+									description: 'the flag is Hello World',
+									points: 100,
+									left: 1,
+									flag: 'Hello World'
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		include: {
+			profile: {
+				include: {
+					team: {
+						include: {
+							challenges: true
+						}
 					}
 				}
 			}
 		}
 	});
-	const team = await prisma.team.upsert({
-		where: { id: '2' },
-		update: {},
-		create: {
-			id: '2',
-			name: 'PHS Computer Team',
-			members: {
-				connect: {
-					id: '1'
-				}
-			}
-		}
-	});
-	const challenge = await prisma.challenge.upsert({
-		where: { id: '3' },
-		update: {},
-		create: {
-			id: '1',
-			title: 'Hello World',
-			description: 'the flag is Hello World',
-			points: 100,
-			left: 1,
-			solvedBy: {
-				connect: [{ id: '2' }]
-			},
-			flag: 'Hello World'
-		}
-	});
-	console.log({ daniel, team, challenge });
+	console.log({ daniel });
 }
 main()
 	.then(async () => {
